@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="UTF-8">
+<title>Simple Calculator </title>
+</head>
+
+<body>
+
+ /* creating a form
+  * creating a text box to display result
+  */
+
+<center><form name="form" style="padding:20px; border:1px solid black; height:290px; width:200px;">        
+ <label> Calculator</label>                                                                                                                              
+ 
+ <input type="text" onkeypress="myFunction()" name="result" style="height:60px; width:197px;">
+
+ </br>
+
+//creating calculator buttons 
+<input type="button" name="7" value="7" onClick="run(7)" style="width:47px; height:37px">
+<input type="button" name "8" value="8" onClick="run(8)" style="width:47px; height:37px">
+<input type="button" name "9" value="9" onClick="run(9)" style="width:47px; height:37px"> 
+<input type="button" name "div" value="/" onClick="rundiv()" style="width:47px; height:37px">
+
+</br>
+<input type="button" name "4" value="4" onClick="run(4)" style="width:47px; height:37px">
+<input type="button" name "5" value="5" onClick="run(5)" style="width:47px; height:37px">
+<input type="button" name "6" value="6" onClick="run(6)" style="width:47px; height:37px">        
+<input type="button" name "mul" value="*" onClick="runmul()"style="width:47px; height:37px">
+
+</br>
+<input type="button" name "1" value="1" onClick="run(1)" style="width:47px; height:37px">
+<input type="button" name "2" value="2" onClick="run(2)" style="width:47px; height:37px">
+<input type="button" name "3" value="3" onClick="run(3)" style="width:47px; height:37px">
+<input type="button" name "sub" value="-" onClick="runsub()" style="width:47px; height:37px">
+
+</br>
+<input type="button" name "0" value="0" onClick="run(0)" style="width:98px; height:37px">
+<input type="button" name "dot" value="." onClick="rundot()" style="width:47px; height:37px">
+<input type="button" name "plus" value="+" onClick="runplus()" style="width:47px; height:37px">
+
+</br>
+<input type="button" name "Clr" value="C" onClick="runclr()" style="width:98px; height:37px">
+<input type="button" name "equal" value="=" onClick="runequ()" style="width:98px; height:37px">
+</form></center>
+
+<script type="text/javascript">
+
+
+
+function myFunction()                                    //function to obtain input from keyboard
+{
+document.form.result.value;
+}
+
+ 
+function run(num)                                        //function to obtain numbers
+{
+  document.form.result.value+=num;
+}
+
+/*functions for performing opearations :
+  * division
+  * subtraction
+  * multiplication
+  * addition
+  */
+
+function rundiv()                        
+{
+ document.form.result.value+="/";
+}
+
+function runsub()
+{
+ document.form.result.value+="-";
+}
+
+function runmul()
+{
+ document.form.result.value+="*";
+}
+
+function runplus()
+{
+ document.form.result.value+="+";
+}
+
+function rundot()                                           // function to input dot                             
+{
+ document.form.result.value+=".";
+}
+
+function runequ()                                           //to evaluate the result
+{
+ var eva=eval(document.form.result.value)
+ document.form.result.value=eva;
+ }
+
+function runclr()                                            //to clear the result
+{
+document.form.result.value=null;
+}
+
+</script>
+</body>
+</html>
